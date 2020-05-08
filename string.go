@@ -105,7 +105,7 @@ func (s String) Ptr() *string {
 
 // IsZero returns true for null strings, for potential future omitempty support.
 func (s String) IsNull() bool {
-	return !s.Valid
+	return !s.Valid || s.String == ""
 }
 
 // Equal returns true if both strings have the same value or are both null.
